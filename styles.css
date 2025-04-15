@@ -1,0 +1,55 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  header h1 {
+    font-size: 24px;
+  }
+  header nav a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+  }
+  header nav a:hover {
+    color: #8cbf88;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #hero {
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+  }
+  #about, #products, #sustainability {
+    background: #fefefe;
+  }
+  
+  /* 3D Canvas */
+  canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+127.0.0.1:500/fanta.html  
