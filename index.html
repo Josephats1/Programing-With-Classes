@@ -3,242 +3,623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programming with Classes - Principles</title>
+    <title>C# Learning Journey</title>
+    <title>Programming with Functions Made Easy</title>
+    <title>Baluku Josephats | Software Dev Student | BYU</title>
     <style>
-        /* General Body Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #3498db, #2ecc71);
-            color: #fff;
-            transition: background 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
         }
         
-        #Me {
-            color: deeppink;
-            font-family: 'Algerian', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: bolder;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
         }
-
-        /* Header Styles */
+        
         header {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         h1 {
             margin: 0;
             font-size: 2.5rem;
         }
         
-        #he {
-            color: #8d0c62;
-            text-decoration: none;
-        }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            padding: 30px;
-            padding-bottom: 80px; /* Space for footer */
-        }
-
-        /* Section Styles */
-        .principle {
-            background-color: rgba(0, 0, 0, 0.7);
-            margin: 20px 0;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Hover Effect for Principle Sections */
-        .principle:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Principle Header */
         h2 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeInUp 1s ease-in-out;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
         }
-
-        /* Paragraph Styles */
-        p {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0;
-            animation: fadeInUp 1s ease-in-out forwards;
+        
+        .week-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-
-        /* Define Animation Effects */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .week-number {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
-
-        /* Light/Dark Mode Toggle */
-        .dark-mode {
-            background: #2c3e50;
-            color: #ecf0f1;
+        
+        .focus-points {
+            background-color: #f0f8ff;
+            padding: 1rem;
+            border-left: 4px solid var(--secondary);
+            margin: 1rem 0;
         }
-
-        .toggle-btn {
-            padding: 10px 20px;
-            background-color: #2ecc71;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 20px;
-            transition: background 0.3s;
+        
+        .csharp-example {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+            margin: 1rem 0;
         }
-
-        .toggle-btn:hover {
-            background-color: #27ae60;
+        
+        .project-highlight {
+            background-color: #e8f4f8;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
         }
-
-        /* Improved Footer */
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
+        
+        .concept-table {
             width: 100%;
-            margin-top: auto;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
         }
-
-        /* Mobile Responsiveness */
+        
+        .concept-table th, .concept-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .concept-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .concept-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
         @media (max-width: 768px) {
-            main {
-                padding: 20px;
-                padding-bottom: 70px;
-            }
-            
-            .principle {
-                padding: 15px;
-            }
-            
             h1 {
                 font-size: 2rem;
             }
             
-            h2 {
-                font-size: 1.5rem;
+            .week-card {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Programming with Classes - Principles</h1>
-        <h1 id="Me">Baluku Josephats</h1>
-        <button class="toggle-btn" id="themeToggleBtn">Switch to Dark Mode</button>
+        <div class="container">
+            <h1>C# Learning Journey</h1>
+            <p>From Python Basics to C# Object-Oriented Programming</p>
+            <h1>Programming with Functions Made Easy</h1>
+    <h1>Baluku Josephats | Software Dev Student | BYU</h1>
+        </div>
     </header>
+    
+    <div class="container">
+        <!-- Week 1 -->
+        <section id="week1">
+            <div class="week-card">
+                <div class="week-number">Week 01</div>
+                <h2>Python Review and Calling Functions</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Reviewing Python basics (for comparison)</li>
+                        <li>Understanding how to call functions</li>
+                        <li>Practicing calculations and storing values</li>
+                    </ul>
+                </div>
+                
+                <h3>🧪 C# Skill Equivalent:</h3>
+                <p>You learned how to use existing methods like Console.WriteLine() and how to call your own functions.</p>
+                
+                <div class="csharp-example">
+                    <pre>void ShowGreeting()
+{
+    Console.WriteLine("Hello, user!");
+}
 
-    <main>
-        <div class="principle">
-            <h2>Abstraction</h2>
-            <p class="definition"><strong>Definition:</strong> Abstraction is the concept of hiding the complex implementation details and exposing only the necessary parts of a system.</p>
-            <div class="usage">
-                <strong>Usage in My Program:</strong>
-                <p>In my Exercise Tracking Program, I created an abstract Activity class with methods like GetDistance() and GetSpeed(). These methods were not implemented in the base class but were meant to be overridden by derived classes.</p>
-                <strong>Flexibility for Future Changes:</strong>
-                <p>This design allows easy extension of the program to add new activities in the future without modifying the core structure of the program.</p>
+ShowGreeting(); // This is calling a function</pre>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>🧩 Project: Tire Volume</h3>
+                    <p>You practiced using math and function calls to calculate volume based on input. In C#, you'd break this logic into separate methods for reusability.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="principle">
-            <h2>Encapsulation</h2>
-            <p class="definition"><strong>Definition:</strong> Encapsulation is the bundling of data and methods that operate on the data, restricting direct access to some of the object's components.</p>
-            <div class="usage">
-                <strong>Usage in My Program:</strong>
-                <p>In the Activity class, I made member variables like distance, speed, and laps private and provided public methods to access or modify them safely.</p>
-                <strong>Flexibility for Future Changes:</strong>
-                <p>This allows for controlled changes to the internal workings of an object without impacting other parts of the program.</p>
+        </section>
+        
+        <!-- Week 2 -->
+        <section id="week2">
+            <div class="week-card">
+                <div class="week-number">Week 02</div>
+                <h2>Writing Functions</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Writing your own functions</li>
+                        <li>Using parameters and return values</li>
+                    </ul>
+                </div>
+                
+                <h3>🔧 C# Concepts:</h3>
+                <p>You started learning how to define your own methods and return results.</p>
+                
+                <div class="csharp-example">
+                    <pre>double Add(double a, double b)
+{
+    return a + b;
+}</pre>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>🧩 Project: Sentences</h3>
+                    <p>You likely created functions like GetAdjective(), GetVerb(), and BuildSentence() to randomly build sentences. Each block of logic was placed in a separate method — a great example of modular design.</p>
+                </div>
             </div>
-        </div>
-
-        <div class="principle">
-            <h2>Inheritance</h2>
-            <p class="definition"><strong>Definition:</strong> Inheritance enables a class to inherit properties and methods from another class, facilitating code reusability and creating a hierarchical structure.</p>
-            <div class="usage">
-                <strong>Usage in My Program:</strong>
-                <p>The Activity class is the base class, and Running, Cycling, and Swimming classes inherit from it to reuse common functionality and add specific behavior.</p>
-                <strong>Flexibility for Future Changes:</strong>
-                <p>New activity types can be easily added by creating new subclasses that inherit from Activity, reusing common logic.</p>
+        </section>
+        
+        <!-- Week 3 -->
+        <section id="week3">
+            <div class="week-card">
+                <div class="week-number">Week 03</div>
+                <h2>Testing and Fixing Functions</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Learning to debug, test, and refactor your code</li>
+                        <li>Ensuring your functions work correctly and return expected results</li>
+                    </ul>
+                </div>
+                
+                <h3>🧪 C# Skill:</h3>
+                <p>You probably began using unit tests or at least manually checking outputs.</p>
+                
+                <div class="csharp-example">
+                    <pre>bool IsPositive(int number)
+{
+    return number > 0;
+}</pre>
+                </div>
+                
+                <p>You'd write test cases to make sure IsPositive(-3) returns false and IsPositive(5) returns true.</p>
+                
+                <div class="project-highlight">
+                    <h3>🧩 Project: Water Pressure</h3>
+                    <p>You tested formulas and ensured your methods (like CalculatePressure) returned accurate data.</p>
+                </div>
             </div>
-        </div>
+        </section>
+        
+        <!-- Week 4 -->
+        <section id="week4">
+            <div class="week-card">
+                <div class="week-number">Week 04</div>
+                <h2>Lists and Dictionaries</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Working with collections of data</li>
+                        <li>Using lists and dictionaries to store multiple values</li>
+                        <li>Looping through them in functions</li>
+                    </ul>
+                </div>
+                
+                <h3>🔧 C# Examples:</h3>
+                <div class="csharp-example">
+                    <pre>List&lt;string&gt; names = new List&lt;string&gt; { "Alice", "Bob", "Charlie" };
 
-        <div class="principle">
-            <h2>Polymorphism</h2>
-            <p class="definition"><strong>Definition:</strong> Polymorphism allows different classes to be treated as instances of a common superclass, enabling method overriding and dynamic method invocation.</p>
-            <div class="usage">
-                <strong>Usage in My Program:</strong>
-                <p>The Activity class defines abstract methods for distance and speed. These methods are overridden in each derived class like Running, Cycling, and Swimming to provide specific implementations.</p>
-                <strong>Flexibility for Future Changes:</strong>
-                <p>Polymorphism allows new activities to be introduced without altering the existing code, ensuring scalability.</p>
+void PrintNames(List&lt;string&gt; list)
+{
+    foreach (string name in list)
+    {
+        Console.WriteLine(name);
+    }
+}</pre>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>🧩 Project: Chemistry</h3>
+                    <p>You stored elements, names, or weights in collections and processed them using loops and functions.</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </section>
+        
+        <!-- Week 5 -->
+        <section id="week5">
+            <div class="week-card">
+                <div class="week-number">Week 05</div>
+                <h2>Text Files and Exceptions</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Reading/writing to text files</li>
+                        <li>Handling errors using try-catch blocks</li>
+                    </ul>
+                </div>
+                
+                <h3>🔧 C# File I/O:</h3>
+                <div class="csharp-example">
+                    <pre>try
+{
+    string[] lines = File.ReadAllLines("grocery.txt");
+    foreach (var line in lines)
+    {
+        Console.WriteLine(line);
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error: " + ex.Message);
+}</pre>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>🧩 Project: Grocery Store</h3>
+                    <p>You created methods to read products and calculate totals, all while handling possible file errors gracefully.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Week 6 -->
+        <section id="week6">
+            <div class="week-card">
+                <div class="week-number">Week 06</div>
+                <h2>Objects and Programming Project</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Introduction to Object-Oriented Programming (OOP)</li>
+                        <li>Creating your own classes and objects</li>
+                        <li>Grouping related functions into methods of a class</li>
+                    </ul>
+                </div>
+                
+                <h3>🔧 C# Example:</h3>
+                <div class="csharp-example">
+                    <pre>class Product
+{
+    public string Name;
+    public double Price;
 
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{Name} costs {Price}");
+    }
+}</pre>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>💼 Project Experience</h3>
+                    <p>You started building larger projects where functions were grouped inside objects — making your program more organized and scalable.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Week 7 -->
+        <section id="week7">
+            <div class="week-card">
+                <div class="week-number">Week 07</div>
+                <h2>Student-Chosen Final Project</h2>
+                
+                <div class="focus-points">
+                    <h3>🧠 Focus:</h3>
+                    <ul>
+                        <li>Bringing everything together</li>
+                        <li>Functions</li>
+                        <li>Classes</li>
+                        <li>File handling</li>
+                        <li>Collections</li>
+                        <li>Error handling</li>
+                    </ul>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>🎓 Final Demonstration</h3>
+                    <p>This project was your final exam in action — showing off your ability to break problems down into reusable, tested, and well-structured functions.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Summary -->
+        <section id="skills-summary">
+            <div class="week-card">
+                <h2>🧠 Final Thoughts</h2>
+                <p>By the end of this course, you learned to:</p>
+                
+                <table class="concept-table">
+                    <tr>
+                        <th>Skill</th>
+                        <th>Real-World Equivalent</th>
+                    </tr>
+                    <tr>
+                        <td>Calling functions</td>
+                        <td>Running tasks (e.g., print, add, calculate)</td>
+                    </tr>
+                    <tr>
+                        <td>Writing functions</td>
+                        <td>Creating reusable blocks of logic</td>
+                    </tr>
+                    <tr>
+                        <td>Testing and debugging</td>
+                        <td>Fixing broken logic and improving reliability</td>
+                    </tr>
+                    <tr>
+                        <td>Using lists/dictionaries</td>
+                        <td>Handling large data efficiently</td>
+                    </tr>
+                    <tr>
+                        <td>File I/O and error handling</td>
+                        <td>Reading user data and protecting your code</td>
+                    </tr>
+                    <tr>
+                        <td>Using classes and methods</td>
+                        <td>Building real applications with OOP</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Final Project Template -->
+        <section id="final-project">
+            <div class="week-card">
+                <h2>Final Project: Grocery Inventory System</h2>
+                <p>A C# Console App Template that combines functions, file reading, lists, objects, and error handling.</p>
+                
+                <h3>📁 File Structure</h3>
+                <div class="csharp-example">
+                    <pre>GroceryInventory/
+├── Program.cs
+├── Product.cs
+├── products.txt</pre>
+                </div>
+                
+                <h3>✅ Product.cs — The Class (Object-Oriented Programming)</h3>
+                <div class="csharp-example">
+                    <pre>public class Product
+{
+    public string Name { get; set; }
+    public double Price { get; set; }
+
+    public Product(string name, double price)
+    {
+        Name = name;
+        Price = price;
+    }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{Name} - ${Price:F2}");
+    }
+}</pre>
+                </div>
+                
+                <h3>✅ Program.cs — Main Program File</h3>
+                <div class="csharp-example">
+                    <pre>using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Program
+{
+    static List&lt;Product&gt; products = new List&lt;Product&gt;();
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to the Grocery Inventory System");
+
+        LoadProductsFromFile("products.txt");
+        DisplayMenu();
+    }
+
+    static void LoadProductsFromFile(string fileName)
+    {
+        try
+        {
+            string[] lines = File.ReadAllLines(fileName);
+            foreach (var line in lines)
+            {
+                string[] parts = line.Split(',');
+                string name = parts[0];
+                double price = double.Parse(parts[1]);
+
+                Product product = new Product(name, price);
+                products.Add(product);
+            }
+
+            Console.WriteLine($"Loaded {products.Count} products from file.\n");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error reading file: " + ex.Message);
+        }
+    }
+
+    static void DisplayMenu()
+    {
+        string input = "";
+        while (input != "4")
+        {
+            Console.WriteLine("1. View Products");
+            Console.WriteLine("2. Add Product");
+            Console.WriteLine("3. Save Products");
+            Console.WriteLine("4. Exit");
+            Console.Write("Choose an option: ");
+            input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    ViewProducts();
+                    break;
+                case "2":
+                    AddProduct();
+                    break;
+                case "3":
+                    SaveProductsToFile("products.txt");
+                    break;
+                case "4":
+                    Console.WriteLine("Exiting...");
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Try again.\n");
+                    break;
+            }
+        }
+    }
+
+    static void ViewProducts()
+    {
+        Console.WriteLine("\n=== Product List ===");
+        foreach (Product product in products)
+        {
+            product.PrintInfo();
+        }
+        Console.WriteLine();
+    }
+
+    static void AddProduct()
+    {
+        Console.Write("Enter product name: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Enter product price: ");
+        double price = double.Parse(Console.ReadLine());
+
+        Product newProduct = new Product(name, price);
+        products.Add(newProduct);
+
+        Console.WriteLine("Product added!\n");
+    }
+
+    static void SaveProductsToFile(string fileName)
+    {
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (Product product in products)
+                {
+                    writer.WriteLine($"{product.Name},{product.Price}");
+                }
+            }
+
+            Console.WriteLine("Products saved successfully.\n");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error saving file: " + ex.Message);
+        }
+    }
+}</pre>
+                </div>
+                
+                <h3>🧾 Sample products.txt File</h3>
+                <div class="csharp-example">
+                    <pre>Apple,0.99
+Milk,2.50
+Bread,1.25
+Eggs,3.00</pre>
+                </div>
+                
+                <h3>✅ Concepts Covered:</h3>
+                <table class="concept-table">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Where it appears</th>
+                    </tr>
+                    <tr>
+                        <td>Functions</td>
+                        <td>ViewProducts(), AddProduct()</td>
+                    </tr>
+                    <tr>
+                        <td>File I/O</td>
+                        <td>LoadProductsFromFile()</td>
+                    </tr>
+                    <tr>
+                        <td>Error handling</td>
+                        <td>try-catch blocks</td>
+                    </tr>
+                    <tr>
+                        <td>Lists</td>
+                        <td>List&lt;Product&gt; products</td>
+                    </tr>
+                    <tr>
+                        <td>OOP & Classes</td>
+                        <td>Product class with methods</td>
+                    </tr>
+                    <tr>
+                        <td>User interaction</td>
+                        <td>Console-based menu</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+    
     <footer>
-        <p>&copy; 2025 Programming with Classes - Principles Explained</p>
-        <p >Made with Love by <a href="https://josephats1.github.io/Baluku/service.html" target="_blank" style="color: rgb(235, 22, 171);">Baluku Josephats</a></p>
+        <div class="container">
+            <p>C# Learning Journey &copy; 2025, Baluku Josephats. All Rights Reserved</p>
+            <p>Created as a demonstration of HTML/CSS skills</p>
+        </div>
     </footer>
-
-    <script>
-        // Theme Toggle JavaScript
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const body = document.body;
-
-        // Check for saved theme preference
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) {
-            body.classList.add(currentTheme);
-            updateButtonText();
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark-mode' : '');
-            updateButtonText();
-        });
-
-        function updateButtonText() {
-            themeToggleBtn.textContent = body.classList.contains('dark-mode') 
-                ? 'Switch to Light Mode' 
-                : 'Switch to Dark Mode';
-        }
-    </script>
 </body>
 </html>

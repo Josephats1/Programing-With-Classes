@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Fundamentals Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Web Fundamentals Portfolio</h1>
+            <p class="subtitle">Course Duration: Mar 8 – Apr 16</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#week1">Week 1</a></li>
+            <li><a href="#week2">Week 2</a></li>
+            <li><a href="#week3">Week 3</a></li>
+            <li><a href="#week4">Week 4</a></li>
+            <li><a href="#week5">Week 5</a></li>
+            <li><a href="#week6">Week 6</a></li>
+            <li><a href="#week7">Week 7</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="week1" class="week-card">
+            <h2>🔹 Week 01: Getting Started</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Course Expectations Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Tool Setup Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Learning Activities Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Home Page Assignment</span>
+                    <div class="example">
+                        <h4>Example Code:</h4>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Homepage&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: navy;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+    &lt;p&gt;This is my first webpage!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>60-second Status Update</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="week2" class="week-card">
+            <h2>🔹 Week 02: Image Album Creation</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Learning Activities Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Picture Album Assignment</span>
+                    <div class="example">
+                        <h4>Gallery Example:</h4>
+                        <div class="gallery-example">
+                            <div class="gallery-item">
+                                <img src="https://via.placeholder.com/150" alt="Sample image 1">
+                                <p>Image Caption</p>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://via.placeholder.com/150" alt="Sample image 2">
+                                <p>Image Caption</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>60-second Status Update</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="week3" class="week-card">
+            <h2>🔹 Week 03: Country Information Page</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Learning Activities Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Country Page Assignment</span>
+                    <div class="example">
+                        <h4>Country Table Example:</h4>
+                        <table class="country-table">
+                            <tr>
+                                <th>Category</th>
+                                <th>Information</th>
+                            </tr>
+                            <tr>
+                                <td>Capital</td>
+                                <td>Ottawa</td>
+                            </tr>
+                            <tr>
+                                <td>Population</td>
+                                <td>38 million</td>
+                            </tr>
+                            <tr>
+                                <td>Language</td>
+                                <td>English, French</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Student Feedback to Instructor</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>60-second Status Update</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="week4" class="week-card">
+            <h2>🔹 Week 04: Project Planning & Enhancements</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Website Subject Project</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Learning Activities Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Enhanced Temple Album Assignment</span>
+                    <div class="example">
+                        <h4>Enhanced Gallery with Flexbox:</h4>
+                        <pre><code>.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}</code></pre>
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>60-second Status Update</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="week5" class="week-card">
+            <h2>🔹 Week 05: Website Planning & Forms</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Website Planning Document</span>
+                    <div class="example">
+                        <h4>Planning Structure:</h4>
+                        <ul class="planning-list">
+                            <li>Homepage - Introduction</li>
+                            <li>About - Background information</li>
+                            <li>Gallery - Image collection</li>
+                            <li>Contact - Form submission</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Learning Activities Quiz</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Product Review Form Assignment</span>
+                    <div class="example">
+                        <h4>Form Example:</h4>
+                        <form class="sample-form">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required>
+                            
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                            
+                            <label for="rating">Rating:</label>
+                            <select id="rating" required>
+                                <option value="">Select rating</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                            </select>
+                            
+                            <label for="review">Review:</label>
+                            <textarea id="review" required></textarea>
+                            
+                            <button type="submit">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>60-second Status Update</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="week6" class="week-card">
+            <h2>🔹 Week 06: Final Project</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Final Website Project Submission</span>
+                    <div class="example">
+                        <h4>Multi-page Website Features:</h4>
+                        <ul class="features-list">
+                            <li>Responsive design with media queries</li>
+                            <li>Consistent navigation across pages</li>
+                            <li>Styled forms with validation</li>
+                            <li>Enhanced image gallery</li>
+                            <li>Semantic HTML structure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="week7" class="week-card">
+            <h2>🔹 Week 07: Final Wrap-Up</h2>
+            <div class="completed-items">
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>Final Exam</span>
+                </div>
+                <div class="completed-item">
+                    <span class="checkmark">✅</span>
+                    <span>End-of-Course Evaluation Submitted</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements-card">
+            <h2>🏆 Course Achievements</h2>
+            <ul class="achievements-list">
+                <li>Completed 100% of course modules</li>
+                <li>Built multiple HTML & CSS-based web pages</li>
+                <li>Developed skills in layout, design, forms, and web planning</li>
+                <li>Successfully created and submitted a final website project</li>
+            </ul>
+            
+            <div class="skills-showcase">
+                <h3>Skills Developed:</h3>
+                <div class="skill-bubbles">
+                    <span class="skill-bubble">HTML5</span>
+                    <span class="skill-bubble">CSS3</span>
+                    <span class="skill-bubble">Responsive Design</span>
+                    <span class="skill-bubble">Forms</span>
+                    <span class="skill-bubble">Layout</span>
+                    <span class="skill-bubble">Accessibility</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Web Fundamentals Portfolio</p>
+        </div>
+    </footer>
+</body>
+</html>

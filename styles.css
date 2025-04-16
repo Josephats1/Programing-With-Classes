@@ -1,55 +1,280 @@
 /* General Styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #2ecc71;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Week Cards */
+.week-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.week-card h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.completed-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.completed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.checkmark {
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* Examples */
+.example {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.example h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+}
+
+/* Gallery Example */
+.gallery-example {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.gallery-item {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table Example */
+.country-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.country-table th, .country-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.country-table th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Form Example */
+.sample-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.sample-form label {
+  font-weight: bold;
+}
+
+.sample-form input,
+.sample-form select,
+.sample-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.sample-form button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sample-form button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Achievements Section */
+.achievements-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.achievements-list {
+  margin: 1rem 0 2rem 2rem;
+}
+
+.achievements-list li {
+  margin-bottom: 0.5rem;
+}
+
+.skills-showcase {
+  margin-top: 2rem;
+}
+
+.skill-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-bubble {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+      flex-wrap: wrap;
   }
-  body {
-    font-family: Arial, sans-serif;
-    background: #f3f3f3;
+  
+  nav li {
+      margin: 0.25rem;
   }
-  header {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  .week-card {
+      padding: 1.5rem;
   }
+  
   header h1 {
-    font-size: 24px;
-  }
-  header nav a {
-    margin: 0 15px;
-    color: #333;
-    text-decoration: none;
-  }
-  header nav a:hover {
-    color: #8cbf88;
+      font-size: 2rem;
   }
   
-  /* Section Styles */
-  section {
-    padding: 100px 20px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .subtitle {
+      font-size: 1rem;
   }
-  #hero {
-    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
-  }
-  #about, #products, #sustainability {
-    background: #fefefe;
-  }
-  
-  /* 3D Canvas */
-  canvas {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  }
-127.0.0.1:500/fanta.html  
+}

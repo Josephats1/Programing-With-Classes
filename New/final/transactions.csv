@@ -1,0 +1,4 @@
+date,description,amount,category
+2023-01-01,Initial Deposit,5000.00,Income
+2023-01-03,Rent,-1200.00,Housing
+2023-01-05,Groceries,-85.50,Food
